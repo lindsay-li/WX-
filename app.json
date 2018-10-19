@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/start/start",
+    "pages/index/index",
+    "pages/users/users",
+    "pages/player/playser",
+    "pages/songList/songList",
+    "pages/artists/artists",
+    "pages/songsDetail/songsDetail",
+    "pages/singer/singer"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#111",
+    "navigationBarTitleText": "音乐时光",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#555",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#eee",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "static/image/hoted.png",
+        "iconPath": "static/image/hot.png",
+        "pagePath": "pages/index/index",
+        "text": "推荐"
+      },
+      {
+        "selectedIconPath": "static/image/local.png",
+        "iconPath": "static/image/localed.png",
+        "pagePath": "pages/users/users",
+        "text": "我的"
+      }
+    ]
+  }
+  
+}

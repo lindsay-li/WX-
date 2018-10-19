@@ -1,0 +1,60 @@
+<!--pages/player/playser.wxml-->
+<view class="container" style="height:{{height}}px;">
+  <view class="wrapper" style="background-image:url({{imgUrl}});">
+  </view>
+  <view class="glass">
+    <view class="center">
+      <view class="disc {{paused?'rotes':''}}"> 
+        <view class="img">
+          <image src="{{imgUrl}}"/>
+        </view>
+        <image src="{{disc}}" />
+      </view>
+    </view>
+    <view class="needle" style="transform:rotate({{deg}}deg);">
+      <image src="{{needle}}" />
+    </view>
+    <view class="menu">
+      <view class="like">
+        <image src="{{like}}" />
+      </view>
+      <view class="coment">
+        <image src="{{coment}}" />
+      </view>
+      <view class="list" bindtap="turnBox">
+        <image src="{{list}}" />
+      </view>
+    </view>
+    <view class="progress">
+      <view class="left">{{startTime}}</view>
+      <view class="pro">
+        <view class="pros" style="width:{{p_width}}rpx;"></view>
+      </view>
+      <view class="right">{{duration}}</view>
+    </view>
+    <view class="operation">
+      <view class="prevBtn" catchtap="prevBtn">
+        <image src="{{next}}"/>
+      </view>
+      <view class="playBtn" catchtap="playbtn">
+        <image src="{{playing}}"/>
+      </view>
+      <view class="nextBtn" catchtap="nextBtn">
+        <image src="{{next}}"/>
+      </view>
+    </view>
+    <view class="songlist {{slide==1?'slideIn':''}} {{slide==2?'slideOut':''}}">
+      <view class='s_top'>
+        <view class='s_count'>共{{songList.length}}首歌曲</view>
+        <view class="clear" catchtap="clearSong">全部清除</view>
+      </view>
+      <scroll-view scroll-y class="scroll">
+        <view class="s_list" wx:for="{{songList}}" wx:key="{{index}}" data-id="{{item.id}}" data-i ="{{index}}" catchtap="plays">
+          <text class="s_name {{current==index?'s_name1':''}}">{{item.name}}<text class="s_ar {{current==index?'s_ar1':''}}"><text> - </text>{{item.singer}}</text></text>
+          <text class="delete" catchtap="deletes" data-index="{{index}}">×</text>
+        </view>
+      </scroll-view>
+      <view class="close" bindtap="closeBox">关闭</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,137 @@
+/* pages/songsDetail/songsDetail.wxss */
+@import "../page/newSong.wxss";
+.wrapper{
+  width: 100%;
+  height: 100%;
+}
+.blur{
+  width: 100%;
+  height: 410rpx;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  -webkit-filter: blur(80rpx); /* Chrome, Opera */
+       -moz-filter: blur(80rpx);
+        -ms-filter: blur(80rpx);    
+            filter: blur(80rpx);
+}
+.top{
+  width: 100%;
+  height: 410rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.5);
+ 
+}
+.top .top-box{
+  width: 92%;
+  height: 276rpx;
+  margin:  20rpx auto;
+  display: flex;
+}
+.top-box .bg{
+  width: 276rpx;
+  height: 100%;
+  position: relative;
+}
+.bg .nums{
+  position: absolute;
+  top: 5rpx;
+  right: 8rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+.iconall{
+  background: url("https://www.xiaochengzi.xyz/image/iconall.png") no-repeat;
+}
+.nums .listen{
+  display: inline-block;
+  width: 28rpx;
+  height: 22rpx;
+  background-position:  0 -24px;
+  position: relative;
+  left: -5rpx;
+  top: 3rpx;
+}
+.top .content{
+  width: 360rpx;
+  height: 100%;
+  margin-left: 30rpx;
+}
+.content .title{
+  width: 100%;
+  height: auto;
+  color: #fff;
+  font-size: 12pt;
+  margin-top: 30rpx;
+}
+.content .users{
+  margin-top: 40rpx;
+}
+.users image{
+  width:50rpx;
+  height: 50rpx;
+  border-radius: 50%; 
+}
+.users .names{
+  position: relative;
+  top: -13rpx;
+  left: 0rpx;
+  font-size: 9pt;
+  color: #ccc;
+  margin-left: 10rpx;
+}
+.menu{
+  width: 100%;
+  height: 84rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.menu .son{
+  width: 70rpx;
+  height: 84rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.son image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.son .nms{
+  font-size: 8pt;
+  color: #ccc;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  box-sizing: content-box;
+}
+.menu button{
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: relative;
+  text-align: inherit;
+  line-height: normal;
+  background-color: rgba(0,0,0,0);
+  border-radius: 0;
+}
+button::after{
+border: none;
+}
+.scroll{
+  width: 90%;
+  height: 800rpx;
+  margin: 0 auto;
+}
+.button-hover{
+  background-color: transparent;
+}
+.onplay{
+  width: auto;
+  font-size: 9pt;
+  color: #ccc;
+  padding: 10rpx 0 0 10rpx;
+}

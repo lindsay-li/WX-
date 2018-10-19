@@ -1,0 +1,9 @@
+<!--pages/songList/songList.wxml-->
+<import src = "../page/template.wxml"/> 
+<view class="song">
+    <view class="title">热门歌单</view>
+    <view>
+      <!-- <collection :songList="songList"></collection> -->
+      <template is="playlist" data = "{{songList}}" />
+    </view>
+</view>

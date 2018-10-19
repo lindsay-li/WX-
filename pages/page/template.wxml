@@ -1,0 +1,64 @@
+<template name="playlist">
+  <view class="remd">
+    <view class="frams" wx:for="{{songList}}" wx:key="{{index}}" data-id = "{{item.id}}" bindtap="goList">
+        <view class="content">
+            <image src="{{item.picUrl}}" />
+            <text class="nums"><text class="iconall listen"></text>{{item.playCount}}</text>
+        </view>
+        <view class="bottom">{{item.name}}</view>
+    </view>
+  </view>
+</template>
+<template name="artists">
+ <view class="box1">
+     <view class="content" wx:for="{{artists}}" wx:key="index" data-id="{{item.id}}" bindtap="goSinger">
+         <view class="imgUrl">
+             <image src="{{item.img1v1Url}}" />
+         </view>
+         <view class="name">
+             {{item.name}}<text wx:if="{{item.alias[0]}}">({{item.alias[0]}})</text>
+         </view>
+     </view>
+ </view>  
+</template>
+<template name = "newSong">
+  <view>
+      <view class="new_l" wx:for="{{newSong}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="player">
+          <view class="box">
+              <view class="indes">{{index+1}}</view>
+              <view class="left">
+                  <view class="s_name fhide">{{item.name}}</view>
+                  <view class="s_air fhide"><text wx:for="{{item.ar || item.artists}}" wx:for-item="ar" wx:for-index="i" wx:key="{{i}}"><text wx:if="{{i>0}}">/</text>{{ar.name}}</text></view>
+              </view>
+          </view>
+          
+          <view class="right">
+              <image src="https://www.xiaochengzi.xyz/image/add.png" data-id="{{item.id}}" catchtap="addSonglist"/>
+              <image src="https://www.xiaochengzi.xyz/image/play.png"/>
+          </view>
+      </view>
+  </view>  
+</template>
+<template name = "footer">
+ <view class="footers">
+     <view class="titles">歌曲版权归网易云所有</view>
+     <view class="bottom">此小程序仅供个人学习使用，不作任何商业用途</view>
+ </view>  
+</template>
+<template name="singer">
+  <view>
+  <view class="box" wx:for="{{singer}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="goSinger">
+      <view class="b-left">
+        <view class="arUrl">
+            <image src="{{item.img1v1Url}}"/>
+        </view>
+        <view class="arName">
+            {{item.name}}<text wx:if="{{item.alias[0]}}">({{item.alias[0]}})</text>
+        </view>
+      </view>
+      <view class="b-right">
+      
+      </view>
+  </view>
+  </view>
+</template>

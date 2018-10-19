@@ -1,0 +1,47 @@
+.remd{
+  width: 100%;
+  height: 700rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.frams{
+  height: 335rpx;
+  width:246rpx;
+  background-color: #fff;
+}
+.frams .content{
+  width:246rpx;
+  height: 246rpx;
+  position: relative;
+}
+.content .nums{
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+.frams .bottom{
+  width: 90%;
+  position: relative;
+  left: 15rpx;
+  font-size: 10pt;
+  color: #111;
+  display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.iconall{
+  background: url("https://www.xiaochengzi.xyz/image/iconall.png") no-repeat;
+}
+.nums .listen{
+  display: inline-block;
+  width: 28rpx;
+  height: 22rpx;
+  background-position:  0 -24px;
+  position: relative;
+  left: -5rpx;
+  top: 3rpx;
+}

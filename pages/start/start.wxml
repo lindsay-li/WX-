@@ -1,0 +1,52 @@
+<!--pages/start/start.wxml-->
+<view class="container">
+  <view id="calendar">
+          <!-- 年份 月份 -->
+          <view class="month">
+              <view class='ul'>
+                  <!--点击会触发pickpre函数，重新刷新当前日期 @cviewck(vue v-on:cviewck缩写) -->
+                  <view class="arrow"  catchtap="pickPre">❮</view>
+                  <view class="year-month">
+                      <text class="choose-year">{{ currentYear }}</text>
+                      <text class="choose-month">{{ currentMonth }}月</text>
+                  </view>
+                  <view class="arrow"  catchtap="pickNext">❯</view>
+              </view>
+          </view>
+          <!-- 星期 -->
+          <view class="weekdays">
+              <view style="margin-left:0;">一</view>
+              <view>二</view>
+              <view>三</view>
+              <view>四</view>
+              <view>五</view>
+              <view style="color:red">六</view>
+              <view style="color:red">日</view>
+          </view>
+          <!-- 日期 -->
+          <view class="days">
+              <!-- 核心 v-for循环 每一次循环用<view>标签创建一天 -->
+              <view wx:for="{{days}}" wx:key="{{index}}">
+                  <!--本月-->
+                  <!--如果不是本月  改变类名加灰色-->
+
+                  <text wx:if="{{item.m != currentMonth}}" class="other-month">{{ item.day }}</text>
+
+                  <!--如果是本月  还需要判断是不是这一天-->
+                  <text wx:else>
+                      <!--今天  同年同月同日-->
+                      <text wx:if="{{item.y == year && item.m ==moth  && item.day == day}}" class="active">{{ item.day}}</text>
+                      <text wx:else>{{ item.day }}</text>
+                  </text>
+
+              </view>
+          </view>
+  </view>
+  <view class="text">
+      
+      <view class="info">使用说明：</view>
+      <view class="titi">点击左右箭头可查看上月或者下月信息，红色标记为本日</view>
+      <button class="btn" bindtap="goIndex" wx:if="{{!paused}}">确定</button>
+  </view>
+</view>
+

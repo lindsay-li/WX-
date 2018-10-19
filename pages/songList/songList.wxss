@@ -1,0 +1,17 @@
+/* pages/songList/songList.wxss */
+@import "../page/playlist.wxss";
+.song{
+  width: 100%;
+  height: auto;
+}
+.title{
+  width: auto;
+  font-size: 12pt;
+  color:#333;
+  border-left: 6rpx solid #d81e06;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+  padding: 0 20rpx;
+  height: 12pt;
+  line-height: 12pt;
+}

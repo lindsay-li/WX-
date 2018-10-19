@@ -1,0 +1,211 @@
+/* pages/player/playser.wxss */
+.container{
+  width: 100%;
+}
+.wrapper{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  -webkit-filter: blur(30rpx); /* Chrome, Opera */
+       -moz-filter: blur(30rpx);
+        -ms-filter: blur(30rpx);    
+            filter: blur(30rpx);
+}
+.container .glass{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  overflow: hidden;
+}
+.container  .needle{
+  width:202rpx;
+  height: 294rpx;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+.container .center{
+  width: 596rpx;
+  height: 596rpx;
+  margin:  150rpx auto 190rpx;
+}
+.center .disc{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.center .rotes{
+  animation: rotas 20s linear infinite;
+}
+@keyframes rotas {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+.disc .img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+}
+.img>image{
+  border-radius: 50%!important;
+}
+.container .menu{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+}
+.menu .like,
+.menu .coment,
+.menu .list{
+  width: 48rpx;
+  height: 48rpx;
+}
+.container .progress{
+  width: 100%;
+  height: 24rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30rpx 0;
+}
+.progress .left{
+  font-size: 8pt;
+  color: #fff;
+}
+.progress .right{
+  font-size: 8pt;
+  color: #ccc;
+}
+.progress .pro{
+  width: 562rpx;
+  height: 2rpx;
+  background-color: #ccc;
+}
+.pro .pros{
+  height: 100%;
+  background-color: #d81e06;
+  transition: width .5s linear;
+}
+.container .operation{
+  width: 100%;
+  height: 65rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.operation .prevBtn,
+.operation .nextBtn{
+  width: 54rpx;
+  height: 54rpx;
+}
+.operation .playBtn{
+  width: 64rpx;
+  height: 64rpx;
+}
+.operation .nextBtn{
+  transform: rotate(180deg);
+}
+.container .songlist{
+  width: 100%;
+  height: 72%;
+  background-color: rgba(255,255,255,.9);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+.container .slideIn{
+  animation: slideInUp 0.5s linear forwards;
+}
+.container .slideOut{
+  animation: slideOutDown 0.5s linear forwards;
+}
+.songlist .s_top{
+  width: 90%;
+  height: auto;
+  display: flex;
+  color: #111;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ccc;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.songlist .s_count{
+  font-size: 10pt;
+}
+.songlist .clear{
+  font-size: 12pt;
+}
+.songlist .s_list{
+  width: 100%;
+  height: auto;
+  padding: 15rpx 0;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 auto;
+}
+.s_list .s_name{
+  font-size: 12pt;
+  color: #111;
+  display: inline-block;
+  width: 90%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.s_list .s_ar{
+  font-size:8pt;
+  color: #999; 
+}
+.s_list .s_name1{
+  color: #d81e06;
+}
+.s_list .s_ar1{
+  color: #333;
+}
+.s_list .delete{
+  font-size: 14pt;
+  color: #999;
+}
+.songlist .close{
+  width: 100%;
+  height: auto;
+  padding: 20rpx 0;
+  font-size:12pt;
+  color: #111;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color:  rgba(255,255,255,.9);
+  border-top: 1rpx solid #ccc;
+}
+.scroll{
+  width: 90%;
+  height: 82%;
+  margin: 0 auto;
+}
+@keyframes slideInUp{
+  0%{transform:translate3d(0,100%,0);visibility:visible}to{transform:translateZ(0);}
+}
+@keyframes slideOutDown{
+  0%{transform:translateZ(0)}to{visibility:hidden;transform:translate3d(0,100%,0);}
+  /* 0%{transform: translate(0);}
+  100%{transform: translateY(100%);} */
+}

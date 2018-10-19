@@ -1,0 +1,9 @@
+<!--pages/artists/artists.wxml-->
+<import src = "../page/template.wxml"/> 
+<view class="container">
+  <view class="title_1">热门歌手</view>
+  <view>
+      <!-- <hotsonger :artists="artists"></hotsonger> -->
+      <template is="singer" data = "{{singer}}" />
+  </view>
+</view>

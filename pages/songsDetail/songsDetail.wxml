@@ -1,0 +1,42 @@
+<!--pages/songsDetail/songsDetail.wxml-->
+<import src = "../page/template.wxml"/> 
+<view class="wrapper">
+    <view class="blur" style="background-image:url({{imgUrl}});"></view>
+    <view class="top">
+      <view class="top-box">
+        <view class="bg">
+          <image src="{{imgUrl}}" />
+          <text class="nums"><text class="iconall listen"></text>{{playCounts}}</text>
+        </view>
+        <view class="content">
+          <view class="title">{{title}}</view>
+          <view class="users">
+            <image src="{{userUrl}}"/>
+            <text class="names">{{users}}</text>
+          </view>
+          <view class='onplay' bindtap='plays'>
+            全部播放
+          </view>
+        </view>
+      </view>
+      <view class="menu">
+        <view class="collect son">
+          <image src="{{wenjian}}" />
+          <view class="nms">{{collects}}</view>
+        </view>
+        <view class="coment son">
+          <image src="{{coment}}" />
+          <view class="nms">{{commentCounts}}</view>
+        </view>
+        <!-- <button class="share son" open-type='share'> -->
+        <button class="share son" open-type='share'>
+          <image src="{{share}}" />
+          <view class="nms">{{shareCounts}}</view>
+        </button>
+      </view>
+    </view>
+    <scroll-view scroll-y class="scroll">
+        <!-- <songList :newSong = 'songDetail'></songList> -->
+        <template is="newSong" data = "{{newSong}}" />
+    </scroll-view>
+</view>

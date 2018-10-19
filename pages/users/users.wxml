@@ -1,0 +1,18 @@
+<!--pages/users/users.wxml-->
+<view class="container">
+  <view class="user">
+    <image src="{{imgUrl}}"/>
+    <view class="user_name">{{user_name}}</view>
+    <button class='btn' open-type='getUserInfo' bindgetuserinfo='getUser'  wx:if="{{show_login}}">点击登录</button>
+  </view>
+  <view class="line"></view>
+  <view class="like">
+    <view class="title">我喜欢的音乐</view>
+    <view class="box">
+      <!-- <songList :newSong='likeList'></songList> -->
+    </view>
+  </view>
+  <view class="collection">
+    <view class="title">我收藏的歌单</view>
+  </view>
+</view>

@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<import src = "../page/template.wxml"/> 
+<view class="container" >
+    <view class="nav">
+      <view class="tab">
+        <view class="hot {{flag == true?'hot1':''}}" bindtap="hot">
+          热门推荐
+        </view>
+        <view class="t_search {{flag == true?'':'t_search1'}}" bindtap="searchs">
+          搜索歌曲
+        </view>
+      </view>
+      <view  class="logo {{ paused == true?'logo1':''}}" catchtap='goplayer'>
+          <image src="{{logoUrl}}" />
+      </view>
+    </view>
+    <view class="swip {{flagClass?'swip1':''}}" wx:if="{{flag}}">
+      <swiper autoplay indicator-dots circular="true" indicator-color="#fff" indicator-active-color="#d81e06">
+        <block wx:for="{{ bannerUrl}}" wx:key="{{index}}">
+          <swiper-item bindtap="songs">
+            <image src="{{item.pic}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <!-- 热门歌单 -->
+      <view class="song">
+        <view class="title" bindtap="songs">
+          <text>热门歌单</text>
+          <image src="{{rightUrl}}" />
+        </view>
+        <view class="remd">
+          <!-- <collection :songList="songList"></collection> -->
+          <template is="playlist" data = "{{songList}}" />
+        </view>
+      </view>
+      <!-- 热门歌手 -->
+      <view class="hotAr">
+        <view class="title" bindtap="arList">
+          <text>热门歌手</text>
+          <image src="{{rightUrl}}" />
+        </view>
+        <!-- <artists :artists="artists"></artists> -->
+        <template is = "artists" data = "{{artists}}"/>
+      </view>
+      <!-- 热门歌曲 -->
+      <view class="new_s">
+        <view class="title">
+          <text>热门歌曲</text>
+          <image src="{{rightUrl}}" />
+        </view>
+        <scroll-view scroll-y class="scroll">
+          <!-- <songList :newSong = 'newSong'></songList> -->
+          <template is = "newSong" data = "{{newSong}}"/>
+        </scroll-view>
+      </view>
+      <!-- 页脚 -->
+      <view class="footers">
+        <!-- <footers></footers> -->
+        <template is="footer" />
+      </view>
+    </view>
+    <!-- 搜索页面 -->
+    <view class="wraper" wx:if="{{!flag}}">
+      <view class="line"></view>
+      <view class="search">
+        <image src="{{searchUrl}}"/> <input type="text" placeholder="搜一搜你喜欢的歌曲" bindinput="changes" bindconfirm="confirms" confirm-type="search"/>
+      </view>
+      <view class="result" wx:if="{{isFoucs}}">
+        <view class="r-search" bindtap="confirms">搜索“{{values}}”</view>
+        <view class="s-name" wx:for="{{ s_result}}" wx:key="{{j}}" data-id="{{item.id}}" bindtap="player">
+          <image src="{{searchUrl}}"/>
+          <text>{{item.name}}</text>
+          <text wx:if="{{item.artists[0].name}}">-{{item.artists[0].name}}</text>
+          <text wx:if="{{item.alias[0]}}">({{item.alias[0]}})</text>
+        </view>
+        <view class="collect" wx:if="{{s_list.length}}">
+          <view class="c-tit">歌单</view>
+          <view class="c-list" wx:for="{{ s_list}}" wx:key="{{n}}" data-id='{{item.id}}' bindtap="goList">
+            <image src="{{item.coverImgUrl}}"/>
+            <text class="c-name">{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{!isFoucs}}">
+        <view class="tit">热门搜索</view>
+        <view class="hot_tab">
+          <view class="hot_txt" wx:for="{{ hotTXT}}" wx:key="{{n}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>

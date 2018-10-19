@@ -1,0 +1,15 @@
+.footers .footers{
+    width: 100%;
+    height: 120rpx;
+    line-height: 60rpx;
+}
+.footers .footers>.titles{
+    font-size: 12pt;
+    color:#333;
+    text-align: center;
+}
+.footers .footers .bottom{
+    font-size: 10pt;
+    color: #555;
+    text-align: center;
+}

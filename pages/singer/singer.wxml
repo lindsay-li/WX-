@@ -1,0 +1,21 @@
+<!--pages/singer/singer.wxml-->
+<import src = "../page/template.wxml"/>
+<view class="wrapper">
+  <view class="img">
+      <image src="{{singerUrl}}" mode="aspectFill" />
+  </view>
+  <view class="menu">
+      <view class="hotSong {{flag ?'redColor':''}}" catchtap="swit">热门50</view>
+      <view class="info {{!flag ?'redColor':''}}" catchtap="swits">歌手信息</view>
+  </view>
+  <view class="boxx" wx:if="{{flag}}">
+      <scroll-view scroll-y class="scroll">
+        <!-- <songList :newSong = 'songDetail'></songList> -->
+        <template is="newSong" data = "{{newSong}}" />
+      </scroll-view>
+  </view>
+  <view class="content" wx:if="{{!flag}}">
+      <view class="title">{{names}}简介</view>
+      <view class="tit">{{content}}</view>
+  </view>
+</view>
